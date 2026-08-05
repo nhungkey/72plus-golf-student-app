@@ -1,5 +1,27 @@
 // 72+ Golf Academy - Student Portal Data (Updated with Question Bank & Interactive Exams)
 
+const MOCK_STUDENT_PROFILE = {
+  studentId: "HV-72P-8802",
+  name: "Nguyễn Văn An",
+  phone: "0988 123 456",
+  email: "an.nguyen@72plusgolfacademy.edu.vn",
+  coach: "Nguyễn Thái Dương (HLV Trưởng)",
+  cohort: "First Swing K01 | 1:5 Group Class",
+  isApprovedByAdmin: true,
+  attendedCount: 5,
+  totalSessions: 24,
+  upcomingSession: {
+    title: "Buổi 6: Review Giữa Kỳ 1 & TrackMan Fitting",
+    date: "Thứ Ba, 04/08/2026",
+    time: "18:00 - 19:00",
+    location: "Sân tập Golf Phương Đông (Tân Mỹ, Mỹ Đình)",
+    status: "confirmed"
+  },
+  completedQuizzes: {
+    phase1: 80
+  }
+};
+
 const COURSE_POLICY = {
   title: "Chính Sách Khóa Học & Quy Định Lớp Nhóm First Swing",
   location: "Sân tập Golf Phương Đông, Đường Tân Mỹ, Mỹ Đình, Nam Từ Liêm, Hà Nội",
