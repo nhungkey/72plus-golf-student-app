@@ -1,0 +1,422 @@
+/* 72+ Golf Academy - Student Portal Stylesheet (Standard Mobile UX Typography) */
+
+:root {
+  --canvas-dark: #131435;
+  --canvas-card: rgba(255, 255, 255, 0.04);
+  --canvas-card-border: rgba(255, 255, 255, 0.08);
+  --canvas-white: #ffffff;
+  --primary-indigo: #262262;
+  --action-red: #EF3F36;
+  --action-red-soft: rgba(239, 63, 54, 0.12);
+  --action-blue: #1375BC;
+  --action-blue-soft: rgba(19, 117, 188, 0.12);
+  --gold-accent: #BAA769;
+  --past-gray: #252744;
+  --ink-dark: #16191B;
+  --ink-light: #ffffff;
+  --ink-muted: #9fa5c0;
+  --ink-disabled: rgba(255, 255, 255, 0.35);
+  --radius-sm: 6px;
+  --font-family: 'Work Sans', "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--canvas-dark);
+  color: var(--ink-light);
+  font-size: 14px; /* Standard Mobile Base Size */
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app-root {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: #131435;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  padding-bottom: 75px;
+}
+
+/* Header */
+.app-header {
+  background-color: #17183b;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--canvas-card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+.user-avatar-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--action-blue), var(--primary-indigo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  border: 1px solid var(--canvas-card-border);
+  cursor: pointer;
+}
+
+/* Slash Motif */
+.slash-motif {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--action-blue) 0%, var(--action-blue) 40%, var(--action-red) 40%, var(--action-red) 100%);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: 16px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography Standards */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink-light);
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-top: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 44px;
+  height: 2.5px;
+  background-color: var(--action-blue);
+  border-radius: 2px;
+}
+
+/* Cards */
+.card {
+  background: var(--canvas-card);
+  border: 1px solid var(--canvas-card-border);
+  border-radius: var(--radius-sm);
+  padding: 15px 16px;
+  margin-bottom: 12px;
+}
+
+.card-upcoming {
+  border-left: 3px solid var(--action-blue);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card-next-immediate {
+  border-left: 3.5px solid var(--action-red);
+  background: linear-gradient(145deg, rgba(19, 117, 188, 0.12), rgba(19, 20, 53, 0.95));
+}
+
+.card-past {
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.015);
+  opacity: 0.88;
+}
+
+.card-hero {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--gold-accent);
+}
+
+/* Badges - Standard Mobile Size 11px */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 9px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.badge-red {
+  background-color: rgba(239, 63, 54, 0.18);
+  color: #ff7b75;
+  border: 1px solid rgba(239, 63, 54, 0.35);
+}
+
+.badge-blue {
+  background-color: rgba(19, 117, 188, 0.18);
+  color: #5bb3f5;
+  border: 1px solid rgba(19, 117, 188, 0.35);
+}
+
+.badge-gold {
+  background-color: rgba(186, 167, 105, 0.18);
+  color: #ded19c;
+  border: 1px solid rgba(186, 167, 105, 0.35);
+}
+
+.badge-gray {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--ink-muted);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.badge-green {
+  background-color: rgba(46, 125, 50, 0.18);
+  color: #81c784;
+  border: 1px solid rgba(46, 125, 50, 0.35);
+}
+
+/* Action Links */
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.06);
+  color: #d2d6eb;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+/* Buttons - Standard Mobile Touch Target Size (13px text, 36px+ height) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: auto;
+  gap: 6px;
+  font-family: var(--font-family);
+  min-height: 36px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--action-blue);
+  color: white;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #0e5b94;
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: white;
+  border: 1px solid var(--canvas-card-border);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn-blue {
+  background-color: var(--action-blue);
+  color: white;
+}
+
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 12px;
+  min-height: 32px;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background-color: #141533;
+  border-top: 1px solid var(--canvas-card-border);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 200;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 4px;
+  width: 20%;
+  font-family: var(--font-family);
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 3px;
+  fill: currentColor;
+}
+
+.nav-item.active {
+  color: var(--action-blue);
+}
+
+.nav-item.active svg {
+  fill: var(--action-blue);
+}
+
+/* Vector SVG Icons */
+.icon-svg {
+  width: 15px !important;
+  height: 15px !important;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+/* Form Controls - Standard Mobile 14px Input Font */
+textarea, input[type="text"], input[type="email"], input[type="tel"] {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--canvas-card-border);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  color: white;
+  font-family: var(--font-family);
+  font-size: 14px;
+  outline: none;
+}
+
+textarea:focus, input:focus {
+  border-color: var(--action-blue);
+}
+
+textarea::placeholder, input::placeholder {
+  color: var(--ink-disabled);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  padding: 16px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background-color: #17183b;
+  border: 1px solid var(--canvas-card-border);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  max-width: 440px;
+  padding: 20px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--ink-muted);
+  font-size: 22px;
+  cursor: pointer;
+}
